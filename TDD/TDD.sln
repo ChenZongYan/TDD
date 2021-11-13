@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.11
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{0AF4CFCD-3CB6-42EE-A2F1-1F775BB98D22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD_Budget", "TDD_Budget\TDD_Budget.csproj", "{0AF4CFCD-3CB6-42EE-A2F1-1F775BB98D22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
