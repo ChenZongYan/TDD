@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using NSubstitute.Core;
 
 namespace UnitTest
@@ -14,7 +15,12 @@ namespace UnitTest
 
         public decimal Query(DateTime start, DateTime end)
         {
-            return 0;
+            var budgets = _budgetRepo.GetAll();
+            var budget = budgets.First();
+            var startDay = end.Day - start.Day + 1;
+            return budget.Amount / startDay;
+            
+            
         }
     }
 }
