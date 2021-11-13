@@ -17,6 +17,8 @@ namespace UnitTest
 
         public decimal Query(DateTime start, DateTime end)
         {
+            if (start > end) return 0;
+            
             var budgets = _budgetRepo.GetAll();
 
             var totalQueryStartMonth = start.Year * 12 + start.Month;
