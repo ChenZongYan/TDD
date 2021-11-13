@@ -80,5 +80,36 @@ namespace TDD_Budget
             Assert.AreEqual(6100m, budgetService.Query(start, end));
             
         }
+        
+        [Test]
+        public void CrossMonth2()
+        {
+            var budgetRepo = Substitute.For<IBudgetRepo>();
+            budgetRepo.GetAll().Returns(new List<Budget>()
+            {
+                new Budget()
+                {
+                    YearMonth = "202111",
+                    Amount = 3000
+                },
+                new Budget()
+                {
+                    YearMonth = "202112",
+                    Amount = 3100
+                },
+                new Budget()
+                {
+                    YearMonth = "202101",
+                    Amount = 3100
+                }
+            });
+            
+            var budgetService = new BudgetService(budgetRepo);
+            var start = new DateTime(2021, 11, 28);
+            var end = new DateTime(2021, 12, 3);
+
+            Assert.AreEqual(600m, budgetService.Query(start, end));
+            
+        }
     }
 }

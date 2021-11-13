@@ -33,7 +33,7 @@ namespace UnitTest
             var startDateAndEndDateIsSameYearMonth = start.Year == end.Year && start.Month == end.Month;
             
             var startTotalDays = startDateAndEndDateIsSameYearMonth ? (end.Day - start.Day + 1) : (daysInMonthByStartDate - start.Day + 1);
-            var endTotalDays = startDateAndEndDateIsSameYearMonth ? (end.Day - start.Day + 1) : (daysInMonthByEndDate - end.Day + 1);;
+            var endTotalDays = end.Day;
 
              return budgets.Where(
                 x =>
